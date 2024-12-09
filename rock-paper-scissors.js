@@ -23,5 +23,6 @@ function getHumanChoice(){
 
     }
 }
-
+let player = 0;
+let cpu = 0;
 console.log(getComputerChoice());
