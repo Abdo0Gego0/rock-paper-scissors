@@ -23,6 +23,28 @@ function getHumanChoice(){
 
     }
 }
+function playRound(playerChoice , computerChoice){
+    if (
+    (playerChoice === "Rock"     && computerChoice === "Scissors") ||
+    (playerChoice === "Scissors" && computerChoice === "Paper"   ) ||
+    (playerChoice === "Paper"    && computerChoice === "Rock"    )
+    ) {
+        return "You Win";
+    }
+    else if (
+    (computerChoice === "Rock"     && playerChoice === "Scissors") ||
+    (computerChoice === "Scissors" && playerChoice === "Paper"   ) ||
+    (computerChoice === "Paper"    && playerChoice === "Rock"    )
+    ){
+        return `You Lose! ${computerChoice} Beats ${playerChoice}`;
+    }
+    else{
+        return "Your Input Not Valid";
+    }
+}
+
 let player = 0;
 let cpu = 0;
-console.log(getComputerChoice());
+const humanChoice = getHumanChoice();
+const computerChoice = getComputerChoice();
+console.log(playRound(humanChoice,computerChoice));
